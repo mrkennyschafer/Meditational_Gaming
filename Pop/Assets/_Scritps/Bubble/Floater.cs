@@ -7,7 +7,7 @@ using System.Collections;
 
 public class Floater : MonoBehaviour 
 {
-	private Rigidbody2D bubbleRb2D;
+	//private Rigidbody2D bubbleRb2D;
 	public float speed;
 
 	// Use this for initialization
@@ -19,13 +19,13 @@ public class Floater : MonoBehaviour
 
 	void Awake()
 	{
-		bubbleRb2D = GameObject.FindGameObjectWithTag ("Bubble").GetComponent<Rigidbody2D> ();
+		//bubbleRb2D = GameObject.FindGameObjectWithTag ("Bubble").GetComponent<Rigidbody2D> ();
 
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	void FixedUpdate () 
 	{
-		bubbleRb2D.AddForce(new Vector2(Random.Range(-10,10), 1f) * speed);
+		gameObject.GetComponent<Rigidbody2D> ().AddForce(new Vector2(Random.Range(-10,10), 1f) * speed);
 	}
 }
